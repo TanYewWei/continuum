@@ -185,7 +185,6 @@ defmodule Continuum.Date do
 
   @spec to_epoch(t) :: non_neg_integer
   def to_epoch(date) do
-    zone = timezone(date)
     date = timezone(date, "UTC")
 
     if date < (DateTime.epoch |> DateTime.date) do

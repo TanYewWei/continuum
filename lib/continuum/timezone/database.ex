@@ -69,7 +69,7 @@ defmodule Continuum.Timezone.Database do
 
       { :zone, name, rules } ->
         { rules, _ } = Enum.reduce rules, { [], { :local, {{0,1,1},{0,0,0}} } }, fn
-          { offset, rules, format, until }, { result, last } ->
+          { offset, rules, format, until }, { result, _last } ->
             rules = cond do
               rules |> is_binary ->
                 Enum.filter @rules, fn rule ->

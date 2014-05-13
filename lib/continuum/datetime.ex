@@ -222,7 +222,6 @@ defmodule Continuum.DateTime do
   """
   @spec timezone(t, Timezone.t) :: t
   def timezone(self, new) when self |> is_datetime do
-    timezone = timezone(self)
     datetime = case self do
       { { _, _ } = datetime, _ } ->
         datetime
@@ -245,7 +244,7 @@ defmodule Continuum.DateTime do
   """
   @spec dst?(t) :: boolean
   def dst?(datetime) do
-    zone = timezone(datetime)
+    _zone = timezone(datetime)
 
     false
   end

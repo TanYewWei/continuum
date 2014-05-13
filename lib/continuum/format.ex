@@ -28,7 +28,7 @@ defmodule Continuum.Format do
   end
 
   def format(datetime, format) when format |> is_list do
-    Enum.map(format, &format(datetime, &1)) |> iolist_to_binary
+    Enum.map(format, &format(datetime, &1)) |> iodata_to_binary
   end
 
   def format(datetime, { :day, :number, :padded }) do
